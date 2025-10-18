@@ -5,131 +5,174 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: #f7f7f8;
-  color: #111111;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a; /* Dark navy background */
+  color: #e2e8f0; /* Soft light text */
 }
 
 .App {
   max-width: 720px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 header {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 header h1 {
-  margin: 0 0 4px 0;
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #3b82f6; /* Bright blue */
+  margin-bottom: 8px;
 }
 
 header p {
+  font-size: 16px;
+  color: #ef4444; /* Red accent */
   margin: 0;
-  color: #555;
 }
 
-.task-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
-}
-
+/* Input and Add button */
 #inp {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex: 1;
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #ffffff;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #inp input {
   flex: 1;
-  border: 0;
-  outline: 0;
   background: transparent;
-  font-size: 14px;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-size: 15px;
 }
 
 #inp button {
-  border: 0;
-  background: #111111;
-  color: #ffffff;
-  padding: 8px 12px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border: none;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
+#inp button:hover {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+/* Category and Priority Dropdowns */
 #btns {
   display: flex;
-  gap: 8px;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 #btns select {
-  padding: 8px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #e2e8f0;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
+#btns select:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+/* Task List */
 .task-list {
   list-style: none;
   padding: 0;
-  margin: 16px 0;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 .task-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.task-list li:hover {
+  transform: scale(1.02);
 }
 
 .task-list li.completed {
   text-decoration: line-through;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
+/* Complete button */
 .task-list button {
-  background: none;
-  border: 0;
-  color: #047857;
-  cursor: pointer;
+  background: #22c55e;
+  border: none;
+  color: white;
   padding: 6px 8px;
   border-radius: 6px;
+  cursor: pointer;
 }
 
+.task-list button:hover {
+  background: #16a34a;
+}
+
+/* Progress Bar */
 .progress-tracker {
-  margin-top: 16px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.progress-tracker p {
+  margin-bottom: 8px;
 }
 
 .progress-bar {
   height: 8px;
-  background: #eeeeee;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .progress {
   height: 100%;
-  background: #16a34a;
+  width: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
 }
 
+/* Clear Button */
 .clear-btn {
-  margin-top: 16px;
-  background: #dc2626;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: #ffffff;
-  border: 0;
-  padding: 10px 14px;
-  border-radius: 6px;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.clear-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
 }
